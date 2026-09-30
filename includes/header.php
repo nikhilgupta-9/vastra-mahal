@@ -5,10 +5,10 @@ require_once __DIR__ . '/../config/db.php';
 $currentPage = basename($_SERVER['PHP_SELF']);
 $pageCategory = $_GET['category'] ?? '';
 
-$storePhone = getSetting($pdo, 'phone_number', '+91 98765 43210');
-$storeWhatsapp = getSetting($pdo, 'whatsapp_number', '+919876543210');
+$storePhone = getSetting($pdo, 'phone_number', '+91 96251 37860');
+$storeWhatsapp = getSetting($pdo, 'whatsapp_number', '+919625137860');
 $storeEmail = getSetting($pdo, 'store_email', 'contact@vastramahal.com');
-$storeAddress = getSetting($pdo, 'store_address', 'Shop No. 12, Heritage Fashion Arcade, Janakpuri / Uttam Nagar, New Delhi - 110059');
+$storeAddress = getSetting($pdo, 'store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046');
 $googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6');
 
 // Fetch active categories for dropdown
@@ -51,7 +51,7 @@ try {
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-7 d-none d-md-block">
                     <div class="d-flex align-items-center gap-3">
-                        <span><i class="fa-solid fa-store me-1 text-warning"></i> <strong>Store:</strong> Janakpuri / Uttam Nagar, New Delhi</span>
+                        <span><i class="fa-solid fa-store me-1 text-warning"></i> <strong>Store:</strong> Gandhi Market, Sagar Pur, New Delhi</span>
                         <span>|</span>
                         <a href="<?= e($googleMapUrl); ?>" target="_blank" class="text-decoration-none">
                             <i class="fa-solid fa-location-dot me-1 text-danger"></i> Get Shop Directions

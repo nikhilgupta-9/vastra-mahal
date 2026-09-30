@@ -133,7 +133,7 @@ $sidebarCats = $pdo->query("SELECT c.*, COUNT(p.id) as count
                 <!-- Store Location & QR Sidebar Widget -->
                 <div class="card border rounded-3 p-3 shadow-sm bg-white text-center">
                     <span class="text-danger fw-bold small text-uppercase" style="letter-spacing:1px;">Try Before You Buy</span>
-                    <h6 class="fw-bold mt-1 mb-2">Visit Janakpuri Boutique</h6>
+                    <h6 class="fw-bold mt-1 mb-2">Visit Sagar Pur Boutique</h6>
                     <img src="images/vastra-mahal-location-qr.png" alt="Store QR" class="img-fluid rounded mx-auto mb-2 border p-1" style="max-width:140px;">
                     <p class="small text-muted mb-2">Scan on mobile to navigate directly to the shop!</p>
                     <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-royal-outline w-100">

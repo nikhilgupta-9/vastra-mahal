@@ -101,7 +101,7 @@ $recentInquiries = $pdo->query("SELECT * FROM contact_inquiries ORDER BY id DESC
             <span class="badge bg-warning text-dark fw-bold mb-1">Store QR Standee Active</span>
             <h5 class="fw-bold mb-1 text-white" style="font-family: var(--vm-font-title);">Boutique GPS Location & Digital Catalog QR</h5>
             <p class="small text-light opacity-90 mb-0">
-                Customers in Janakpuri / Uttam Nagar can scan this code to browse all product categories and open turn-by-turn Google Maps navigation directly to your store: <code>https://maps.app.goo.gl/73nDqtqFGqEFEmUf6</code>.
+                Customers in Gandhi Market, Sagar Pur can scan this code to browse all product categories and open turn-by-turn Google Maps navigation directly to your store: <code>https://maps.app.goo.gl/73nDqtqFGqEFEmUf6</code>.
             </p>
         </div>
         <div class="col-md-3 text-md-end">

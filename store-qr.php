@@ -44,7 +44,7 @@ try {
 
                     <h4 class="fw-bold mb-2" style="font-family: var(--vm-font-title); color: var(--vm-maroon);">Scan To Navigate & Explore Collections</h4>
                     <p class="text-muted small mx-auto mb-4" style="max-width: 500px;">
-                        Point your mobile camera to scan this QR code. It will open instant GPS directions directly to our boutique in Janakpuri / Uttam Nagar, New Delhi!
+                        Point your mobile camera to scan this QR code. It will open instant GPS directions directly to our boutique in Gandhi Market, Sagar Pur, New Delhi!
                     </p>
 
                     <!-- QR Code Display Box -->

@@ -43,7 +43,7 @@ $relatedProducts = $relStmt->fetchAll();
 
 // Product page URL for WhatsApp share
 $currentProductUrl = SITE_URL . '/product-detail.php?id=' . $product['id'];
-$waMessage = "Hello Vastra Mahal! I am interested in this design:\n\n*{$product['name']}*\nPrice: " . formatRupee($effectivePrice) . "\nSKU: {$product['sku']}\n\nLink: {$currentProductUrl}\n\nIs this available in the Janakpuri boutique for trial or delivery?";
+$waMessage = "Hello Vastra Mahal! I am interested in this design:\n\n*{$product['name']}*\nPrice: " . formatRupee($effectivePrice) . "\nSKU: {$product['sku']}\n\nLink: {$currentProductUrl}\n\nIs this available in the Sagar Pur boutique for trial or delivery?";
 ?>
 
 <!-- Page Header -->
@@ -194,7 +194,7 @@ $waMessage = "Hello Vastra Mahal! I am interested in this design:\n\n*{$product[
                         </a>
 
                         <div class="d-flex gap-2">
-                            <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-royal flex-grow-1 justify-content-center py-2" title="Navigate to Janakpuri Store">
+                            <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-royal flex-grow-1 justify-content-center py-2" title="Navigate to Sagar Pur Store">
                                 <i class="fa-solid fa-location-dot me-2"></i> Visit Store To Try (GPS Navigation)
                             </a>
                             <a href="contact.php" class="btn btn-royal-outline py-2 px-3" title="Send Contact Inquiry">
@@ -207,7 +207,7 @@ $waMessage = "Hello Vastra Mahal! I am interested in this design:\n\n*{$product[
                     <div class="p-3 rounded-3 border d-flex align-items-center gap-3 bg-white shadow-sm" style="border-left: 4px solid var(--vm-maroon) !important;">
                         <img src="images/vastra-mahal-location-qr.png" alt="Scan Shop QR" class="img-fluid rounded border" style="width:75px;height:75px;">
                         <div>
-                            <h6 class="fw-bold mb-1 text-dark">Try this design in our Janakpuri Store</h6>
+                            <h6 class="fw-bold mb-1 text-dark">Try this design in our Sagar Pur Store</h6>
                             <p class="small text-muted mb-1"><?= e($storeAddress); ?></p>
                             <a href="<?= e($googleMapUrl); ?>" target="_blank" class="small text-danger fw-bold text-decoration-none">
                                 <i class="fa-solid fa-diamond-turn-right me-1"></i> Get Directions in Google Maps

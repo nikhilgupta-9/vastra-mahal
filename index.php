@@ -146,7 +146,7 @@ try {
                     <i class="fa-solid fa-store text-danger fs-2"></i>
                     <div class="text-start">
                         <h6 class="mb-0 fw-bold">Boutique Trial</h6>
-                        <small class="text-muted">Try in store in Janakpuri</small>
+                        <small class="text-muted">Try in store in Sagar Pur</small>
                     </div>
                 </div>
             </div>
@@ -421,7 +421,7 @@ try {
                     <img src="images/banners/store-interior.jpg" alt="Vastra Mahal Showroom Interior" class="img-fluid w-100" style="min-height: 380px; object-fit: cover;">
                     <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white">
                         <h5 class="mb-0 text-warning" style="font-family: var(--vm-font-title);">Vastra Mahal Boutique Showroom</h5>
-                        <small>Heritage Arcade, Janakpuri / Uttam Nagar, New Delhi</small>
+                        <small>Gandhi Market, Sagar Pur, New Delhi</small>
                     </div>
                 </div>
             </div>

@@ -117,8 +117,9 @@ vastra-mahal/
 
 ---
 
-## 📍 Boutique Location
-- **Address:** Vastra Mahal, Main Market, Ethnic Wear Hub
+## 📍 Boutique Location & Contact
+- **Address:** RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046
+- **Phone / WhatsApp:** +91 96251 37860
 - **Google Maps:** [https://maps.app.goo.gl/73nDqtqFGqEFEmUf6](https://maps.app.goo.gl/73nDqtqFGqEFEmUf6)
 
 ---

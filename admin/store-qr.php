@@ -2,8 +2,8 @@
 $pageTitle = "Store QR Standee & Print";
 require_once __DIR__ . '/includes/admin-header.php';
 
-$storeAddress = getSetting($pdo, 'store_address', 'Shop No. 12, Heritage Fashion Arcade, Janakpuri / Uttam Nagar, New Delhi - 110059');
-$storePhone = getSetting($pdo, 'phone_number', '+91 98765 43210');
+$storeAddress = getSetting($pdo, 'store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046');
+$storePhone = getSetting($pdo, 'phone_number', '+91 96251 37860');
 $googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6');
 ?>
 

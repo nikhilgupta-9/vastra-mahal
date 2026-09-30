@@ -1,8 +1,8 @@
 <?php
-$storePhone = getSetting($pdo, 'phone_number', '+91 98765 43210');
-$storeWhatsapp = getSetting($pdo, 'whatsapp_number', '+919876543210');
+$storePhone = getSetting($pdo, 'phone_number', '+91 96251 37860');
+$storeWhatsapp = getSetting($pdo, 'whatsapp_number', '+919625137860');
 $storeEmail = getSetting($pdo, 'store_email', 'contact@vastramahal.com');
-$storeAddress = getSetting($pdo, 'store_address', 'Shop No. 12, Heritage Fashion Arcade, Janakpuri / Uttam Nagar, New Delhi - 110059');
+$storeAddress = getSetting($pdo, 'store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046');
 $googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6');
 $storeTimings = getSetting($pdo, 'store_timings', 'Mon - Sun: 10:30 AM to 9:00 PM');
 $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);

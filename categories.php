@@ -73,7 +73,7 @@ try {
     <div class="container text-center">
         <h3 class="fw-bold mb-3" style="font-family: var(--vm-font-title); color: var(--vm-maroon);">Looking for Something Bespoke?</h3>
         <p class="text-muted mx-auto mb-4" style="max-width: 650px;">
-            Visit our physical boutique in Janakpuri / Uttam Nagar or connect directly with our master drapers on WhatsApp for custom color combinations, bridal customization, and size tailoring.
+            Visit our physical boutique in Gandhi Market, Sagar Pur, New Delhi or connect directly with our master drapers on WhatsApp for custom color combinations, bridal customization, and size tailoring.
         </p>
         <div class="d-flex justify-content-center gap-3">
             <a href="contact.php" class="btn btn-royal">

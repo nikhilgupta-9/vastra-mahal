@@ -49,7 +49,7 @@ require_once __DIR__ . '/includes/header.php';
                     <img src="images/banners/store-interior.jpg" alt="Vastra Mahal Showroom" class="img-fluid w-100" style="min-height: 420px; object-fit: cover;">
                     <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white">
                         <h6 class="text-warning mb-0" style="font-family:var(--vm-font-title);">The Vastra Mahal Flagship Boutique</h6>
-                        <small>Heritage Fashion Arcade, Janakpuri / Uttam Nagar, New Delhi</small>
+                        <small>Gandhi Market, Sagar Pur, New Delhi</small>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@ require_once __DIR__ . '/includes/header.php';
                 <span class="hero-badge"><i class="fa-solid fa-location-dot me-1 text-warning"></i> Open 7 Days</span>
                 <h2 class="display-6 fw-bold text-white mb-3" style="font-family: var(--vm-font-title);">Step into Our Royal Showroom</h2>
                 <p class="text-light opacity-90 mb-4">
-                    Located in Janakpuri / Uttam Nagar, New Delhi. Come visit us with your family to experience the textiles in person.
+                    Located in Gandhi Market, Sagar Pur, New Delhi. Come visit us with your family to experience the textiles in person.
                 </p>
                 <div class="d-flex flex-wrap justify-content-center gap-3">
                     <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-royal" style="background:linear-gradient(135deg, var(--vm-gold) 0%, #9F792A 100%);color:#1A1A1A !important;border:none;">
