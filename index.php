@@ -117,13 +117,11 @@ try {
             </div>
 
             <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#vastraHeroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon p-3 bg-dark bg-opacity-50 rounded-circle" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#vastraHeroCarousel" data-bs-slide="prev" aria-label="Previous Slide">
+                <span class="carousel-nav-btn"><i class="fa-solid fa-chevron-left"></i></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#vastraHeroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon p-3 bg-dark bg-opacity-50 rounded-circle" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next" type="button" data-bs-target="#vastraHeroCarousel" data-bs-slide="next" aria-label="Next Slide">
+                <span class="carousel-nav-btn"><i class="fa-solid fa-chevron-right"></i></span>
             </button>
         </div>
     </div>

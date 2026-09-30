@@ -124,6 +124,11 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);
     <!-- Scripts -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        if (typeof bootstrap === 'undefined') {
+            document.write('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"><\/script>');
+        }
+    </script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/custom.js"></script>
 </body>
