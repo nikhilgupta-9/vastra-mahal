@@ -48,14 +48,23 @@ A modern, dynamic e-commerce catalog and boutique management system developed in
    ```
    *(Or run the SQL file directly using MySQL command line)*.
 
-### 3. Project Configuration
-Verify database connection parameters in `config/db.php`:
-```php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'vastra_mahal_db');
-```
+### 3. Smart Multi-Environment Configuration (Local vs Production)
+The application automatically detects whether it is running on **Localhost (XAMPP)** or a **Live Production Server**:
+- **On Local (XAMPP/WAMP):** Works immediately out-of-the-box with default credentials (`root`, no password, `vastra_mahal_db`).
+- **On Live Production Server (cPanel / Hosting / VPS):**
+  Create `config/db.custom.php` (copy from `config/db.custom.example.php`) once on your server:
+  ```php
+  <?php
+  return [
+      'DB_HOST' => 'localhost',
+      'DB_USER' => 'your_live_db_user',
+      'DB_PASS' => 'your_live_db_password',
+      'DB_NAME' => 'your_live_db_name',
+  ];
+  ```
+  *(Or use a `.env` file in the root directory)*.
+  
+  > 🛡️ **Git Safe:** Both `config/db.custom.php` and `.env` are in `.gitignore`. You can safely push to and pull from GitHub without your live production password ever getting overwritten or committed!
 
 ### 4. Running the Website
 Place the project folder in your web server root (e.g., `D:/xampp/htdocs/vastra-mahal`) and access:
