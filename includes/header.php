@@ -10,6 +10,7 @@ $storeWhatsapp = getSetting($pdo, 'whatsapp_number', '+919625137860');
 $storeEmail = getSetting($pdo, 'store_email', 'contact@vastramahal.com');
 $storeAddress = getSetting($pdo, 'store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046');
 $googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6');
+$storeTimings = getSetting($pdo, 'store_timings', 'Mon - Sun: 10:30 AM to 9:00 PM');
 
 // Fetch active categories for dropdown
 try {
