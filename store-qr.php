@@ -35,10 +35,10 @@ try {
                 <!-- Main QR Card -->
                 <div class="card border rounded-4 shadow-lg p-4 p-md-5 bg-white text-center mb-5" style="border-color: var(--vm-border) !important;">
                     <div class="d-inline-flex align-items-center gap-2 mb-3">
-                        <div class="vastra-brand-emblem" style="width:42px;height:42px;font-size:16px;">
+                        <div class="vastra-brand-emblem" style="width:36px;height:36px;font-size:14px;">
                             <span>TVM</span>
                         </div>
-                        <h3 class="mb-0 text-dark fw-bold" style="font-family: var(--vm-font-title);">The Vastra Mahal</h3>
+                        <h3 class="mb-0 text-dark fw-bold" style="font-family: var(--vm-font-title); font-size: 22px;">The Vastra Mahal</h3>
                     </div>
                     <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 align-self-center" style="letter-spacing:1.5px;">Boutique QR Pass & Catalog</span>
 
@@ -48,8 +48,8 @@ try {
                     </p>
 
                     <!-- QR Code Display Box -->
-                    <div class="p-3 border rounded-3 d-inline-block shadow-sm mb-4" style="background:#FFFDF9; border-color: var(--vm-gold) !important;">
-                        <img src="images/vastra-mahal-location-qr.png" alt="The Vastra Mahal Boutique QR Code" class="img-fluid rounded" style="width: 260px; height: 260px;">
+                    <div class="p-3 border rounded-3 d-inline-block shadow-sm mb-4" style="background:#FFFDF9; border-color: var(--vm-gold) !important; max-width: 100%;">
+                        <img src="images/vastra-mahal-location-qr.png" alt="The Vastra Mahal Boutique QR Code" class="img-fluid rounded" style="max-width: 240px; width: 100%; height: auto; aspect-ratio: 1/1;">
                         <div class="mt-2 small text-muted fw-semibold">
                             <i class="fa-solid fa-map-pin text-danger me-1"></i> Shop GPS Location Attached
                         </div>

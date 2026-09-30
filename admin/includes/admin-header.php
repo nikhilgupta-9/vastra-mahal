@@ -109,12 +109,19 @@ try {
         @media (max-width: 992px) {
             .admin-sidebar {
                 margin-left: -260px;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             }
             .admin-sidebar.show {
                 margin-left: 0;
             }
             .admin-main-wrapper {
                 margin-left: 0;
+            }
+            .admin-topbar {
+                padding: 10px 16px;
+            }
+            .admin-content {
+                padding: 16px 12px;
             }
         }
     </style>

@@ -61,7 +61,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
         <?php endif; ?>
 
-        <div class="row g-5">
+        <div class="row g-4 g-lg-5">
             <!-- Left: Contact Form -->
             <div class="col-lg-6">
                 <div class="card border rounded-3 p-4 shadow-sm bg-white" style="border-color: var(--vm-border) !important;">

@@ -65,10 +65,10 @@ $waMessage = "Hello The Vastra Mahal! I am interested in this design:\n\n*{$prod
 <!-- Main Product Details Section -->
 <section class="pb-5">
     <div class="container">
-        <div class="row g-5">
+        <div class="row g-4 g-lg-5">
             <!-- Left: Main Image Showcase -->
             <div class="col-lg-6">
-                <div class="position-sticky" style="top: 100px;">
+                <div class="product-detail-sticky position-sticky" style="top: 100px;">
                     <div class="card border rounded-3 overflow-hidden shadow-lg p-2 bg-white" style="border-color: var(--vm-border) !important;">
                         <div class="position-relative">
                             <img src="<?= e($product['main_image']); ?>" alt="<?= e($product['name']); ?>" class="img-fluid w-100 rounded" style="aspect-ratio: 3/4; object-fit: cover;">
@@ -193,12 +193,12 @@ $waMessage = "Hello The Vastra Mahal! I am interested in this design:\n\n*{$prod
                             <i class="fa-brands fa-whatsapp fs-4 me-2"></i> Inquire / Order on WhatsApp
                         </a>
 
-                        <div class="d-flex gap-2">
+                        <div class="d-flex flex-column flex-sm-row gap-2">
                             <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-royal flex-grow-1 justify-content-center py-2" title="Navigate to Sagar Pur Store">
-                                <i class="fa-solid fa-location-dot me-2"></i> Visit Store To Try (GPS Navigation)
+                                <i class="fa-solid fa-location-dot me-2"></i> Visit Store To Try
                             </a>
-                            <a href="contact.php" class="btn btn-royal-outline py-2 px-3" title="Send Contact Inquiry">
-                                <i class="fa-regular fa-envelope"></i>
+                            <a href="contact.php" class="btn btn-royal-outline py-2 px-3 text-center" title="Send Contact Inquiry">
+                                <i class="fa-regular fa-envelope me-1"></i> Inquiry
                             </a>
                         </div>
                     </div>

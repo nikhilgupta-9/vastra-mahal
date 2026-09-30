@@ -46,7 +46,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="col-lg-6">
                 <div class="position-relative rounded-3 overflow-hidden shadow-lg border" style="border-color: var(--vm-border) !important;">
-                    <img src="images/banners/store-interior.jpg" alt="The Vastra Mahal Showroom" class="img-fluid w-100" style="min-height: 420px; object-fit: cover;">
+                    <img src="images/banners/store-interior.jpg" alt="The Vastra Mahal Showroom" class="img-fluid w-100" style="min-height: 280px; max-height: 450px; object-fit: cover;">
                     <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white">
                         <h6 class="text-warning mb-0" style="font-family:var(--vm-font-title);">The Vastra Mahal Flagship Boutique</h6>
                         <small>Gandhi Market, Sagar Pur, New Delhi</small>

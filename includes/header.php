@@ -91,7 +91,7 @@ try {
                 </a>
 
                 <!-- Mobile Hamburger Button -->
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#vastraNavbar" aria-controls="vastraNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border rounded-2 px-2 py-1 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#vastraNavbar" aria-controls="vastraNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -110,8 +110,8 @@ try {
                             <a class="nav-link dropdown-toggle <?= in_array($currentPage, ['categories.php']) ? 'active text-danger fw-bold' : ''; ?>" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categories
                             </a>
-                            <ul class="dropdown-menu border-0 shadow" aria-labelledby="categoriesDropdown">
-                                <li><a class="dropdown-item fw-semibold" href="categories.php"><i class="fa-solid fa-grid-2 me-2"></i> View All Categories</a></li>
+                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="categoriesDropdown">
+                                <li><a class="dropdown-item fw-semibold" href="categories.php"><i class="fa-solid fa-grid-2 me-2 text-danger"></i> View All Categories</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <?php foreach ($navCategories as $navCat): ?>
                                     <li><a class="dropdown-item" href="products.php?category=<?= e($navCat['slug']); ?>"><?= e($navCat['name']); ?></a></li>
@@ -135,11 +135,11 @@ try {
                     </ul>
 
                     <!-- Header CTA Right -->
-                    <div class="d-flex align-items-center gap-2">
-                        <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-royal-outline d-none d-xl-inline-flex align-items-center" title="Open Store Location in Google Maps">
+                    <div class="header-cta-group d-flex align-items-center gap-2 mt-3 mt-lg-0 pt-2 pt-lg-0">
+                        <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-royal-outline d-inline-flex align-items-center flex-fill flex-lg-grow-0 justify-content-center" title="Open Store Location in Google Maps">
                             <i class="fa-solid fa-map-location-dot me-1"></i> Visit Shop
                         </a>
-                        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>" target="_blank" class="btn btn-sm btn-whatsapp" title="Chat on WhatsApp">
+                        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>" target="_blank" class="btn btn-sm btn-whatsapp flex-fill flex-lg-grow-0 justify-content-center" title="Chat on WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i> Chat
                         </a>
                     </div>
