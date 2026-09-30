@@ -101,15 +101,15 @@ $recentInquiries = $pdo->query("SELECT * FROM contact_inquiries ORDER BY id DESC
             <span class="badge bg-warning text-dark fw-bold mb-1">Store QR Standee Active</span>
             <h5 class="fw-bold mb-1 text-white" style="font-family: var(--vm-font-title);">Boutique GPS Location & Digital Catalog QR</h5>
             <p class="small text-light opacity-90 mb-0">
-                Customers in Gandhi Market, Sagar Pur can scan this code to browse all product categories and open turn-by-turn Google Maps navigation directly to your store: <code>https://maps.app.goo.gl/73nDqtqFGqEFEmUf6</code>.
+                Customers in Gandhi Market, Sagar Pur can scan this code to browse all product categories and open Google profile navigation directly to your store: <code>https://share.google/4X3xcWrgXxZ754XWa</code>.
             </p>
         </div>
         <div class="col-md-3 text-md-end">
             <a href="store-qr.php" class="btn btn-sm btn-light text-danger fw-bold me-2">
                 <i class="fa-solid fa-print me-1"></i> Print Standee
             </a>
-            <a href="https://maps.app.goo.gl/73nDqtqFGqEFEmUf6" target="_blank" class="btn btn-sm btn-warning text-dark fw-bold">
-                <i class="fa-solid fa-map-location-dot me-1"></i> Test GPS
+            <a href="https://share.google/4X3xcWrgXxZ754XWa" target="_blank" class="btn btn-sm btn-warning text-dark fw-bold">
+                <i class="fa-solid fa-map-location-dot me-1"></i> View Profile
             </a>
         </div>
     </div>
@@ -202,7 +202,7 @@ $recentInquiries = $pdo->query("SELECT * FROM contact_inquiries ORDER BY id DESC
                                     <?= e($inq['message']); ?>
                                 </p>
                                 <div class="d-flex gap-2">
-                                    <a href="https://wa.me/<?= $cleanPhone; ?>?text=<?= urlencode("Hello " . $inq['name'] . "! Thank you for contacting Vastra Mahal regarding: " . $inq['subject']); ?>" target="_blank" class="btn btn-sm btn-success py-0 px-2" style="font-size:12px;">
+                                    <a href="https://wa.me/<?= $cleanPhone; ?>?text=<?= urlencode("Hello " . $inq['name'] . "! Thank you for contacting The Vastra Mahal regarding: " . $inq['subject']); ?>" target="_blank" class="btn btn-sm btn-success py-0 px-2" style="font-size:12px;">
                                         <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp Reply
                                     </a>
                                     <a href="tel:<?= e($inq['phone']); ?>" class="btn btn-sm btn-outline-dark py-0 px-2" style="font-size:12px;">

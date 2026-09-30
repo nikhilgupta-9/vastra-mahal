@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/admin-header.php';
 
 $storeAddress = getSetting($pdo, 'store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046');
 $storePhone = getSetting($pdo, 'phone_number', '+91 96251 37860');
-$googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6');
+$googleMapUrl = getSetting($pdo, 'google_map_url', 'https://share.google/4X3xcWrgXxZ754XWa');
 ?>
 
 <style>
@@ -69,11 +69,11 @@ $googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nD
 <!-- Standee Preview -->
 <div class="py-4">
     <div class="printable-standee">
-        <div class="vastra-brand-emblem mx-auto mb-3" style="width:60px;height:60px;font-size:24px;">
-            <span>VM</span>
+        <div class="vastra-brand-emblem mx-auto mb-3" style="width:60px;height:60px;font-size:20px;">
+            <span>TVM</span>
         </div>
         <h2 class="fw-bold text-dark mb-1" style="font-family: var(--vm-font-title); letter-spacing: 2px; color: var(--vm-maroon) !important;">
-            VASTRA MAHAL
+            THE VASTRA MAHAL
         </h2>
         <div class="text-warning text-uppercase fw-bold small mb-3" style="letter-spacing: 3px; font-size:11px;">
             Royal Heritage Ethnic Couture

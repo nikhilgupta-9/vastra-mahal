@@ -1,14 +1,14 @@
 <?php
 $storePhone = getSetting($pdo, 'phone_number', '+91 96251 37860');
 $storeWhatsapp = getSetting($pdo, 'whatsapp_number', '+919625137860');
-$storeEmail = getSetting($pdo, 'store_email', 'contact@vastramahal.com');
+$storeEmail = getSetting($pdo, 'store_email', 'thevastramahal60@gmail.com');
 $storeAddress = getSetting($pdo, 'store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046');
-$googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6');
+$googleMapUrl = getSetting($pdo, 'google_map_url', 'https://share.google/4X3xcWrgXxZ754XWa');
 $storeTimings = getSetting($pdo, 'store_timings', 'Mon - Sun: 10:30 AM to 9:00 PM');
 $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);
 ?>
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/<?= $cleanWhatsapp; ?>?text=Hello+Vastra+Mahal%2C+I+am+interested+in+your+collection" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp with Vastra Mahal">
+    <a href="https://wa.me/<?= $cleanWhatsapp; ?>?text=Hello+The+Vastra+Mahal%2C+I+am+interested+in+your+collection" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp with The Vastra Mahal">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -19,10 +19,10 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);
                 <!-- Col 1: About Brand -->
                 <div class="col-lg-4 col-md-6">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <div class="vastra-brand-emblem" style="width:40px;height:40px;font-size:16px;">
-                            <span>VM</span>
+                        <div class="vastra-brand-emblem" style="width:40px;height:40px;font-size:14px;">
+                            <span>TVM</span>
                         </div>
-                        <h4 class="mb-0 text-white" style="letter-spacing:1px;">Vastra Mahal</h4>
+                        <h4 class="mb-0 text-white" style="letter-spacing:1px;">The Vastra Mahal</h4>
                     </div>
                     <p class="text-secondary small" style="line-height:1.7;">
                         Celebrating the timeless grandeur of Indian ethnic couture. We bring you handpicked Banarasi silks, opulent bridal lehengas, royal Anarkalis, and trendy girl suits crafted with authentic heritage artistry and modern flair.
@@ -31,10 +31,10 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);
                         <a href="https://wa.me/<?= $cleanWhatsapp; ?>" target="_blank" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="WhatsApp">
                             <i class="fa-brands fa-whatsapp text-success"></i>
                         </a>
-                        <a href="https://instagram.com" target="_blank" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="Instagram">
+                        <a href="<?= e($instagramUrl ?? 'https://instagram.com/thevastramahal'); ?>" target="_blank" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="Instagram">
                             <i class="fa-brands fa-instagram text-danger"></i>
                         </a>
-                        <a href="https://facebook.com" target="_blank" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="Facebook">
+                        <a href="<?= e($facebookUrl ?? 'https://facebook.com/thevastramahal'); ?>" target="_blank" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="Facebook">
                             <i class="fa-brands fa-facebook-f text-primary"></i>
                         </a>
                         <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-outline-light rounded-circle" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;" title="Google Maps">
@@ -81,9 +81,13 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);
                         <i class="fa-regular fa-clock text-warning me-2"></i>
                         <?= e($storeTimings); ?>
                     </p>
-                    <p class="small text-secondary mb-3">
+                    <p class="small text-secondary mb-2">
                         <i class="fa-solid fa-phone text-success me-2"></i>
                         <a href="tel:<?= e($storePhone); ?>" class="text-light"><?= e($storePhone); ?></a>
+                    </p>
+                    <p class="small text-secondary mb-3">
+                        <i class="fa-solid fa-envelope text-warning me-2"></i>
+                        <a href="mailto:<?= e($storeEmail); ?>" class="text-light"><?= e($storeEmail); ?></a>
                     </p>
                     
                     <div class="d-flex align-items-center gap-3 p-2 rounded" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(200,157,75,0.3);">
@@ -106,7 +110,7 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start">
                         <span class="small text-secondary">
-                            &copy; <?= date('Y'); ?> <strong>Vastra Mahal</strong>. All Rights Reserved. Indian Royal Ethnic Couture.
+                            &copy; <?= date('Y'); ?> <strong>The Vastra Mahal</strong>. All Rights Reserved. Indian Royal Ethnic Couture.
                         </span>
                     </div>
                     <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">

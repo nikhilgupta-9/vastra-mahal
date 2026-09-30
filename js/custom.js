@@ -1,5 +1,5 @@
 /**
- * Vastra Mahal (वस्त्र महल) - Custom JavaScript
+ * The Vastra Mahal (द वस्त्र महल) - Custom JavaScript
  * Handles Carousel auto-play, interaction, navigation & UI enhancements
  */
 

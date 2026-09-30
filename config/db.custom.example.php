@@ -1,6 +1,6 @@
 <?php
 /**
- * Vastra Mahal - Production Custom Database Credentials
+ * The Vastra Mahal - Production Custom Database Credentials
  * 
  * 📋 HOW TO USE THIS ON PRODUCTION / CPANEL:
  * 1. Copy or rename this file to "db.custom.php" in this same config directory:

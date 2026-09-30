@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$pageTitle = "Contact & Boutique Location | Vastra Mahal";
+$pageTitle = "Contact & Boutique Location | The Vastra Mahal";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -155,7 +155,7 @@ require_once __DIR__ . '/includes/header.php';
                         <div class="col-sm-8">
                             <span class="badge bg-warning text-dark fw-bold mb-2">Scan & Navigate</span>
                             <h5 class="fw-bold text-white mb-2" style="font-family: var(--vm-font-title);">Find Our Boutique in GPS</h5>
-                            <p class="small text-light opacity-90 mb-3">Scan this QR code with any camera phone to open Google Maps navigation directly to Vastra Mahal!</p>
+                            <p class="small text-light opacity-90 mb-3">Scan this QR code with any camera phone to open Google Maps navigation directly to The Vastra Mahal!</p>
                             <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-light text-danger fw-bold">
                                 <i class="fa-solid fa-diamond-turn-right me-1"></i> Open in Google Maps
                             </a>
@@ -170,7 +170,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="card border rounded-3 overflow-hidden shadow-sm">
                 <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
                     <div>
-                        <h5 class="mb-0 fw-bold" style="font-family: var(--vm-font-title);"><i class="fa-solid fa-map-location-dot text-danger me-2"></i> Vastra Mahal Location Map</h5>
+                        <h5 class="mb-0 fw-bold" style="font-family: var(--vm-font-title);"><i class="fa-solid fa-map-location-dot text-danger me-2"></i> The Vastra Mahal Location Map</h5>
                         <small class="text-muted">Gandhi Market, Sagar Pur, New Delhi</small>
                     </div>
                     <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-royal-outline">

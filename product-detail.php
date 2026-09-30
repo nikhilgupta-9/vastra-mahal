@@ -25,7 +25,7 @@ try {
     exit;
 }
 
-$pageTitle = $product['name'] . " | Vastra Mahal";
+$pageTitle = $product['name'] . " | The Vastra Mahal";
 require_once __DIR__ . '/includes/header.php';
 
 $hasDiscount = !empty($product['sale_price']) && $product['sale_price'] < $product['price'];
@@ -43,7 +43,7 @@ $relatedProducts = $relStmt->fetchAll();
 
 // Product page URL for WhatsApp share
 $currentProductUrl = SITE_URL . '/product-detail.php?id=' . $product['id'];
-$waMessage = "Hello Vastra Mahal! I am interested in this design:\n\n*{$product['name']}*\nPrice: " . formatRupee($effectivePrice) . "\nSKU: {$product['sku']}\n\nLink: {$currentProductUrl}\n\nIs this available in the Sagar Pur boutique for trial or delivery?";
+$waMessage = "Hello The Vastra Mahal! I am interested in this design:\n\n*{$product['name']}*\nPrice: " . formatRupee($effectivePrice) . "\nSKU: {$product['sku']}\n\nLink: {$currentProductUrl}\n\nIs this available in the Sagar Pur boutique for trial or delivery?";
 ?>
 
 <!-- Page Header -->
@@ -207,7 +207,7 @@ $waMessage = "Hello Vastra Mahal! I am interested in this design:\n\n*{$product[
                     <div class="p-3 rounded-3 border d-flex align-items-center gap-3 bg-white shadow-sm" style="border-left: 4px solid var(--vm-maroon) !important;">
                         <img src="images/vastra-mahal-location-qr.png" alt="Scan Shop QR" class="img-fluid rounded border" style="width:75px;height:75px;">
                         <div>
-                            <h6 class="fw-bold mb-1 text-dark">Try this design in our Sagar Pur Store</h6>
+                            <h6 class="fw-bold mb-1 text-dark">Try this design in our Sagar Pur Store - The Vastra Mahal</h6>
                             <p class="small text-muted mb-1"><?= e($storeAddress); ?></p>
                             <a href="<?= e($googleMapUrl); ?>" target="_blank" class="small text-danger fw-bold text-decoration-none">
                                 <i class="fa-solid fa-diamond-turn-right me-1"></i> Get Directions in Google Maps

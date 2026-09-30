@@ -14,7 +14,7 @@ if (!empty($categorySlug)) {
     $cStmt->execute([$categorySlug]);
     $currentCategory = $cStmt->fetch();
     if ($currentCategory) {
-        $pageTitle = $currentCategory['name'] . " | Vastra Mahal";
+        $pageTitle = $currentCategory['name'] . " | The Vastra Mahal";
     }
 }
 
@@ -230,7 +230,7 @@ $sidebarCats = $pdo->query("SELECT c.*, COUNT(p.id) as count
                                             <a href="product-detail.php?id=<?= $prod['id']; ?>" class="btn btn-outline-dark">
                                                 Details
                                             </a>
-                                            <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=<?= urlencode("Hello Vastra Mahal! I am inquiring about " . $prod['name'] . " (" . formatRupee($effectivePrice) . "). Is it in stock in store?"); ?>" target="_blank" class="btn btn-whatsapp" title="Inquire on WhatsApp">
+                                            <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=<?= urlencode("Hello The Vastra Mahal! I am inquiring about " . $prod['name'] . " (" . formatRupee($effectivePrice) . "). Is it in stock in store?"); ?>" target="_blank" class="btn btn-whatsapp" title="Inquire on WhatsApp">
                                                 <i class="fa-brands fa-whatsapp"></i> Chat
                                             </a>
                                         </div>

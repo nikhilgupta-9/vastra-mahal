@@ -1,4 +1,4 @@
--- Vastra Mahal Database Schema
+-- The Vastra Mahal Database Schema
 
 CREATE DATABASE IF NOT EXISTS `vastra_mahal_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `vastra_mahal_db`;
@@ -72,20 +72,20 @@ CREATE TABLE IF NOT EXISTS `site_settings` (
 
 -- Seed Default Admin: username: admin / password: admin123
 INSERT INTO `admin_users` (`username`, `email`, `password`, `name`, `role`)
-VALUES ('admin', 'admin@vastramahal.com', '$2y$10$sDcyaGOKuw3Zx1zqP.p.uOOggU94.Yuax/8zWvYq/OEtlp7dfDLqC', 'Store Admin', 'admin')
+VALUES ('admin', 'thevastramahal60@gmail.com', '$2y$10$sDcyaGOKuw3Zx1zqP.p.uOOggU94.Yuax/8zWvYq/OEtlp7dfDLqC', 'Store Admin', 'admin')
 ON DUPLICATE KEY UPDATE `username`=`username`;
 
 -- Seed Site Settings
 INSERT INTO `site_settings` (`setting_key`, `setting_value`) VALUES
-('store_name', 'Vastra Mahal'),
+('store_name', 'The Vastra Mahal'),
 ('store_tagline', 'Royal Heritage Ethnic Couture & Handloom Silks'),
-('phone_number', '+91 98765 43210'),
-('whatsapp_number', '+919876543210'),
-('store_email', 'contact@vastramahal.com'),
-('store_address', 'Shop No. 12, Heritage Fashion Arcade, Janakpuri / Uttam Nagar, New Delhi - 110059'),
-('google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6'),
+('phone_number', '+91 96251 37860'),
+('whatsapp_number', '+919625137860'),
+('store_email', 'thevastramahal60@gmail.com'),
+('store_address', 'Gandhi Market, Sagar Pur, New Delhi'),
+('google_map_url', 'https://share.google/4X3xcWrgXxZ754XWa'),
 ('google_map_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.825856456073!2d77.0983074!3d28.6053069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzE5LjEiTiA3N8KwMDYnMDMuMiJF!5e0!3m2!1sen!2sin!4v1700000000000'),
 ('store_timings', 'Mon - Sun: 10:30 AM to 9:00 PM'),
-('instagram_url', 'https://instagram.com/vastramahal_official'),
-('facebook_url', 'https://facebook.com/vastramahal')
+('instagram_url', 'https://instagram.com/thevastramahal'),
+('facebook_url', 'https://facebook.com/thevastramahal')
 ON DUPLICATE KEY UPDATE `setting_value`=VALUES(`setting_value`);

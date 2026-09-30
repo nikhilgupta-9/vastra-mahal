@@ -79,7 +79,7 @@ $inquiries = $pdo->query("SELECT * FROM contact_inquiries ORDER BY is_read ASC, 
                             </td>
                             <td>
                                 <div><a href="tel:<?= e($inq['phone']); ?>" class="text-dark text-decoration-none"><?= e($inq['phone']); ?></a></div>
-                                <a href="https://wa.me/<?= $cleanPhone; ?>?text=<?= urlencode("Hello " . $inq['name'] . "! We received your inquiry at Vastra Mahal regarding " . $inq['subject'] . "."); ?>" target="_blank" class="small text-success text-decoration-none fw-bold">
+                                <a href="https://wa.me/<?= $cleanPhone; ?>?text=<?= urlencode("Hello " . $inq['name'] . "! We received your inquiry at The Vastra Mahal regarding " . $inq['subject'] . "."); ?>" target="_blank" class="small text-success text-decoration-none fw-bold">
                                     <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                                 </a>
                             </td>
@@ -137,7 +137,7 @@ $inquiries = $pdo->query("SELECT * FROM contact_inquiries ORDER BY is_read ASC, 
                                             </div>
                                             <div class="modal-footer d-flex justify-content-between">
                                                 <a href="inquiries.php?action=mark_read&id=<?= $inq['id']; ?>" class="btn btn-sm btn-outline-secondary">Mark As Read</a>
-                                                <a href="https://wa.me/<?= $cleanPhone; ?>?text=<?= urlencode("Hello " . $inq['name'] . "! Vastra Mahal team is here regarding your inquiry: " . $inq['subject']); ?>" target="_blank" class="btn btn-sm btn-whatsapp">
+                                                <a href="https://wa.me/<?= $cleanPhone; ?>?text=<?= urlencode("Hello " . $inq['name'] . "! The Vastra Mahal team is here regarding your inquiry: " . $inq['subject']); ?>" target="_blank" class="btn btn-sm btn-whatsapp">
                                                     <i class="fa-brands fa-whatsapp me-1"></i> Reply On WhatsApp
                                                 </a>
                                             </div>

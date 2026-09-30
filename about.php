@@ -1,12 +1,12 @@
 <?php
-$pageTitle = "Our Heritage & Story | Vastra Mahal";
+$pageTitle = "Our Heritage & Story | The Vastra Mahal";
 require_once __DIR__ . '/includes/header.php';
 ?>
 
 <!-- Page Header -->
 <div class="luxury-page-header">
     <div class="container">
-        <h1>The Story of Vastra Mahal</h1>
+        <h1>The Story of The Vastra Mahal</h1>
         <div class="luxury-breadcrumb">
             <a href="index.php">Home</a>
             <span><i class="fa-solid fa-angle-right" style="font-size:11px;"></i></span>
@@ -23,7 +23,7 @@ require_once __DIR__ . '/includes/header.php';
                 <span class="text-danger fw-bold text-uppercase small" style="letter-spacing:2px;">Our Royal Legacy</span>
                 <h2 class="display-6 fw-bold text-dark mt-1 mb-3" style="font-family: var(--vm-font-title);">Crafting Indian Heritage with Timeless Opulence</h2>
                 <p class="text-muted" style="line-height: 1.8;">
-                    Founded with a passion for preserving the majestic textile heritage of India, <strong>Vastra Mahal</strong> is a sanctuary of royal Indian ethnic couture. For generations, our master drapers and artisans have worked in close harmony with hereditary handloom weavers from the ancient ghats of Varanasi and the temple towns of Kanchipuram.
+                    Founded with a passion for preserving the majestic textile heritage of India, <strong>The Vastra Mahal</strong> is a sanctuary of royal Indian ethnic couture. For generations, our master drapers and artisans have worked in close harmony with hereditary handloom weavers from the ancient ghats of Varanasi and the temple towns of Kanchipuram.
                 </p>
                 <p class="text-muted" style="line-height: 1.8;">
                     From pure silk Katan Banarasi sarees woven with authentic gold tested zari to hand-embroidered bridal lehengas, majestic Anarkali suits, and modern designer girl suits, every piece in our collection is an heirloom designed to be cherished across generations.
@@ -46,7 +46,7 @@ require_once __DIR__ . '/includes/header.php';
 
             <div class="col-lg-6">
                 <div class="position-relative rounded-3 overflow-hidden shadow-lg border" style="border-color: var(--vm-border) !important;">
-                    <img src="images/banners/store-interior.jpg" alt="Vastra Mahal Showroom" class="img-fluid w-100" style="min-height: 420px; object-fit: cover;">
+                    <img src="images/banners/store-interior.jpg" alt="The Vastra Mahal Showroom" class="img-fluid w-100" style="min-height: 420px; object-fit: cover;">
                     <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white">
                         <h6 class="text-warning mb-0" style="font-family:var(--vm-font-title);">The Vastra Mahal Flagship Boutique</h6>
                         <small>Gandhi Market, Sagar Pur, New Delhi</small>
@@ -55,7 +55,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
         </div>
 
-        <!-- Four Pillars of Vastra Mahal -->
+        <!-- Four Pillars of The Vastra Mahal -->
         <div class="row g-4 my-4">
             <div class="col-md-3 col-sm-6">
                 <div class="card border rounded-3 p-4 h-100 bg-white shadow-sm text-center">

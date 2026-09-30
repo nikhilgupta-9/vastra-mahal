@@ -1,6 +1,6 @@
 <?php
 /**
- * Vastra Mahal (वस्त्र महल) - Smart Multi-Environment Database Configuration
+ * The Vastra Mahal (द वस्त्र महल) - Smart Multi-Environment Database Configuration
  * 
  * Automatically switches between Local (XAMPP/WAMP) & Production (cPanel/VPS/Cloud)
  * Push freely to Git without risking or overwriting live production credentials!
@@ -141,7 +141,7 @@ try {
              </div>");
     } else {
         die("<div style='font-family:Georgia,serif;padding:50px 30px;text-align:center;max-width:550px;margin:80px auto;border:2px solid #C89D4B;border-radius:12px;background:#FFF;box-shadow:0 12px 35px rgba(0,0,0,0.1);'>
-                <h2 style='color:#7B1113;margin:0 0 10px;font-size:28px;'>VASTRA MAHAL</h2>
+                <h2 style='color:#7B1113;margin:0 0 10px;font-size:28px;'>THE VASTRA MAHAL</h2>
                 <p style='color:#C89D4B;letter-spacing:2px;font-size:12px;text-transform:uppercase;margin-bottom:25px;'>Royal Heritage Ethnic Couture</p>
                 <h4 style='color:#2B2B2B;margin-bottom:15px;font-family:sans-serif;'>Boutique Portal Temporarily Unavailable</h4>
                 <p style='color:#666;line-height:1.6;font-family:sans-serif;font-size:14px;'>We are currently undergoing scheduled system updates. Please check back in a few moments or connect directly with our boutique on WhatsApp.</p>

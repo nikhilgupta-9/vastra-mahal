@@ -17,7 +17,7 @@ try {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= isset($pageTitle) ? e($pageTitle) . ' | Vastra Mahal Admin' : 'Admin Portal | Vastra Mahal'; ?></title>
+    <title><?= isset($pageTitle) ? e($pageTitle) . ' | The Vastra Mahal Admin' : 'Admin Portal | The Vastra Mahal'; ?></title>
     
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -124,11 +124,11 @@ try {
     <!-- Sidebar Start -->
     <aside class="admin-sidebar" id="adminSidebar">
         <a href="index.php" class="admin-sidebar-brand">
-            <div class="vastra-brand-emblem" style="width:38px;height:38px;font-size:16px;">
-                <span>VM</span>
+            <div class="vastra-brand-emblem" style="width:38px;height:38px;font-size:13px;">
+                <span>TVM</span>
             </div>
             <div>
-                <div class="text-white fw-bold" style="font-family: var(--vm-font-title); font-size:18px; letter-spacing:1px;">Vastra Mahal</div>
+                <div class="text-white fw-bold" style="font-family: var(--vm-font-title); font-size:17px; letter-spacing:1px;">The Vastra Mahal</div>
                 <small class="text-warning text-uppercase" style="font-size:10px; letter-spacing:1px;">Admin Control</small>
             </div>
         </a>

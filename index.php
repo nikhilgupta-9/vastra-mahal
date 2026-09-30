@@ -267,7 +267,7 @@ try {
                                 <a href="product-detail.php?id=<?= $prod['id']; ?>" class="btn btn-outline-dark">
                                     Details
                                 </a>
-                                <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=<?= urlencode("Hello Vastra Mahal! I am interested in " . $prod['name'] . " (" . formatRupee($hasDiscount ? $prod['sale_price'] : $prod['price']) . "). Is this available in store?"); ?>" target="_blank" class="btn btn-whatsapp" title="Inquire on WhatsApp">
+                                <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=<?= urlencode("Hello The Vastra Mahal! I am interested in " . $prod['name'] . " (" . formatRupee($hasDiscount ? $prod['sale_price'] : $prod['price']) . "). Is this available in store?"); ?>" target="_blank" class="btn btn-whatsapp" title="Inquire on WhatsApp">
                                     <i class="fa-brands fa-whatsapp"></i> Inquire
                                 </a>
                             </div>
@@ -328,7 +328,7 @@ try {
                                 <a href="product-detail.php?id=<?= $gSuit['id']; ?>" class="btn btn-outline-dark">
                                     View
                                 </a>
-                                <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=<?= urlencode("Hi Vastra Mahal, I like the Girl Suit: " . $gSuit['name'] . ". Please share size availability!"); ?>" target="_blank" class="btn btn-whatsapp">
+                                <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=<?= urlencode("Hi The Vastra Mahal, I like the Girl Suit: " . $gSuit['name'] . ". Please share size availability!"); ?>" target="_blank" class="btn btn-whatsapp">
                                     <i class="fa-brands fa-whatsapp"></i> Chat
                                 </a>
                             </div>
@@ -346,7 +346,7 @@ try {
         <div class="row align-items-center g-5">
             <!-- Left: Store Experience Information -->
             <div class="col-lg-7">
-                <span class="hero-badge"><i class="fa-solid fa-shop me-1 text-warning"></i> Visit Vastra Mahal In Person</span>
+                <span class="hero-badge"><i class="fa-solid fa-shop me-1 text-warning"></i> Visit The Vastra Mahal In Person</span>
                 <h2 class="display-5 fw-bold text-white mb-3" style="font-family: var(--vm-font-title);">Experience Royal Couture at Our Store</h2>
                 <p class="text-light opacity-90 fs-5 mb-4" style="line-height: 1.7;">
                     Touch the richness of authentic pure Katan Banarasi silk, try on custom-tailored bridal lehengas, and explore exclusive girl suits in person with our fashion consultants.
@@ -387,22 +387,22 @@ try {
             <div class="col-lg-5 text-center">
                 <div class="qr-card-box">
                     <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
-                        <div class="vastra-brand-emblem" style="width:32px;height:32px;font-size:14px;">
-                            <span>VM</span>
+                        <div class="vastra-brand-emblem" style="width:32px;height:32px;font-size:12px;">
+                            <span>TVM</span>
                         </div>
                         <h5 class="mb-0 text-dark" style="font-family: var(--vm-font-title);">Store QR Code</h5>
                     </div>
                     <p class="text-muted small mb-3">Scan with your smartphone camera to navigate directly to our boutique or browse our digital catalogue!</p>
                     
                     <div class="p-2 border rounded shadow-sm d-inline-block bg-white mb-3">
-                        <img src="images/vastra-mahal-location-qr.png" alt="Scan Vastra Mahal Store QR" class="img-fluid d-block mx-auto" style="width: 220px; height: 220px;">
+                        <img src="images/vastra-mahal-location-qr.png" alt="Scan The Vastra Mahal Store QR" class="img-fluid d-block mx-auto" style="width: 220px; height: 220px;">
                     </div>
                     
                     <div class="d-flex justify-content-center gap-2">
                         <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-danger px-3">
                             <i class="fa-solid fa-location-arrow me-1"></i> Navigate Now
                         </a>
-                        <a href="images/vastra-mahal-location-qr.png" download="Vastra-Mahal-QR.png" class="btn btn-sm btn-outline-dark px-3">
+                        <a href="images/vastra-mahal-location-qr.png" download="The-Vastra-Mahal-QR.png" class="btn btn-sm btn-outline-dark px-3">
                             <i class="fa-solid fa-download me-1"></i> Save QR
                         </a>
                     </div>
@@ -418,9 +418,9 @@ try {
         <div class="row align-items-center g-4">
             <div class="col-lg-6">
                 <div class="position-relative rounded-3 overflow-hidden shadow-lg border" style="border-color: var(--vm-border) !important;">
-                    <img src="images/banners/store-interior.jpg" alt="Vastra Mahal Showroom Interior" class="img-fluid w-100" style="min-height: 380px; object-fit: cover;">
+                    <img src="images/banners/store-interior.jpg" alt="The Vastra Mahal Showroom Interior" class="img-fluid w-100" style="min-height: 380px; object-fit: cover;">
                     <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white">
-                        <h5 class="mb-0 text-warning" style="font-family: var(--vm-font-title);">Vastra Mahal Boutique Showroom</h5>
+                        <h5 class="mb-0 text-warning" style="font-family: var(--vm-font-title);">The Vastra Mahal Boutique Showroom</h5>
                         <small>Gandhi Market, Sagar Pur, New Delhi</small>
                     </div>
                 </div>
@@ -429,7 +429,7 @@ try {
                 <span class="text-danger fw-bold text-uppercase small" style="letter-spacing:2px;">A Century of Artistry</span>
                 <h2 class="display-6 fw-bold text-dark mt-1" style="font-family: var(--vm-font-title);">Where Royalty Meets Contemporary Fashion</h2>
                 <p class="text-muted" style="line-height: 1.8;">
-                    Founded on the belief that traditional Indian craftsmanship is an irreplaceable luxury, Vastra Mahal houses an exquisite curation of hand-embroidered wedding wear, pure handloom silks from Varanasi and Kanchipuram, and modern ready-to-wear suits for girls and women.
+                    Founded on the belief that traditional Indian craftsmanship is an irreplaceable luxury, The Vastra Mahal houses an exquisite curation of hand-embroidered wedding wear, pure handloom silks from Varanasi and Kanchipuram, and modern ready-to-wear suits for girls and women.
                 </p>
                 <div class="d-flex flex-column gap-2 mb-4">
                     <div class="d-flex align-items-center gap-2">

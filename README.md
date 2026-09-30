@@ -1,4 +1,4 @@
-# 👑 Vastra Mahal (वस्त्र महल) - Luxury Women's Ethnic Wear & Dynamic Boutique
+# 👑 The Vastra Mahal (द वस्त्र महल) - Luxury Women's Ethnic Wear & Dynamic Boutique
 
 A modern, dynamic e-commerce catalog and boutique management system developed in **PHP** and **MySQL** tailored specifically for luxury women's ethnic fashion: **Suits, Sarees, Girl Suits, Lehengas, and Kurtis**.
 
@@ -9,7 +9,7 @@ A modern, dynamic e-commerce catalog and boutique management system developed in
 - **🌸 Bespoke Collections:** Dynamic catalog featuring Handcrafted Sarees (Banarasi, Kanjivaram, Organza), Designer Suits & Anarkalis, Bridal & Festive Lehengas, and everyday Designer Kurtis.
 - **👧 Dedicated "Girl Suits" Section:** Special showcase for young girls and teens featuring trendy Peplum Sharara sets, Punjabi Salwar suits, and festive designer wear.
 - **📍 Smart Boutique QR & Location Integration:**
-  - Integrated with the physical showroom Google Maps location: [View on Google Maps](https://maps.app.goo.gl/73nDqtqFGqEFEmUf6).
+  - Integrated with the physical showroom Google Profile & Maps location: [View on Google Maps](https://share.google/4X3xcWrgXxZ754XWa).
   - Built-in Branded QR Code system allowing walk-in customers or social media visitors to scan and instantly access the digital catalog or get turn-by-turn driving directions to the boutique.
   - Dedicated mobile-friendly landing page (`store-qr.php`) and a printable showroom counter standee in the admin panel (`admin/store-qr.php`).
 - **💬 Direct WhatsApp Consultation & Inquiries:**
@@ -127,10 +127,11 @@ vastra-mahal/
 ---
 
 ## 📍 Boutique Location & Contact
-- **Address:** RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046
+- **Address:** Gandhi Market, Sagar Pur, New Delhi
 - **Phone / WhatsApp:** +91 96251 37860
-- **Google Maps:** [https://maps.app.goo.gl/73nDqtqFGqEFEmUf6](https://maps.app.goo.gl/73nDqtqFGqEFEmUf6)
+- **Email:** thevastramahal60@gmail.com
+- **Google Profile / Store Location:** [https://share.google/4X3xcWrgXxZ754XWa](https://share.google/4X3xcWrgXxZ754XWa)
 
 ---
 
-Developed with ❤️ for **Vastra Mahal**.
+Developed with ❤️ for **The Vastra Mahal**.

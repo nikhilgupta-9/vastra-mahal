@@ -7,10 +7,12 @@ $pageCategory = $_GET['category'] ?? '';
 
 $storePhone = getSetting($pdo, 'phone_number', '+91 96251 37860');
 $storeWhatsapp = getSetting($pdo, 'whatsapp_number', '+919625137860');
-$storeEmail = getSetting($pdo, 'store_email', 'contact@vastramahal.com');
-$storeAddress = getSetting($pdo, 'store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046');
-$googleMapUrl = getSetting($pdo, 'google_map_url', 'https://maps.app.goo.gl/73nDqtqFGqEFEmUf6');
+$storeEmail = getSetting($pdo, 'store_email', 'thevastramahal60@gmail.com');
+$storeAddress = getSetting($pdo, 'store_address', 'Gandhi Market, Sagar Pur, New Delhi');
+$googleMapUrl = getSetting($pdo, 'google_map_url', 'https://share.google/4X3xcWrgXxZ754XWa');
 $storeTimings = getSetting($pdo, 'store_timings', 'Mon - Sun: 10:30 AM to 9:00 PM');
+$instagramUrl = getSetting($pdo, 'instagram_url', 'https://instagram.com/thevastramahal');
+$facebookUrl = getSetting($pdo, 'facebook_url', 'https://facebook.com/thevastramahal');
 
 // Fetch active categories for dropdown
 try {
@@ -26,7 +28,7 @@ try {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title><?= isset($pageTitle) ? e($pageTitle) . ' | Vastra Mahal - Royal Heritage Ethnic Couture' : 'Vastra Mahal - Royal Heritage Suits, Sarees & Ethnic Couture'; ?></title>
+    <title><?= isset($pageTitle) ? e($pageTitle) . ' | The Vastra Mahal - Royal Heritage Ethnic Couture' : 'The Vastra Mahal - Royal Heritage Suits, Sarees & Ethnic Couture'; ?></title>
     
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
@@ -63,7 +65,7 @@ try {
                     <div class="d-inline-flex align-items-center gap-3">
                         <span><i class="fa-regular fa-clock me-1"></i> 10:30 AM - 9:00 PM</span>
                         <span>|</span>
-                        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=Hello+Vastra+Mahal%2C+I+want+to+know+more+about+your+collection" target="_blank" class="text-decoration-none">
+                        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>?text=Hello+The+Vastra+Mahal%2C+I+want+to+know+more+about+your+collection" target="_blank" class="text-decoration-none">
                             <i class="fa-brands fa-whatsapp text-success me-1"></i> WhatsApp: <?= e($storePhone); ?>
                         </a>
                     </div>
@@ -80,10 +82,10 @@ try {
                 <!-- Brand Logo -->
                 <a class="vastra-brand" href="index.php">
                     <div class="vastra-brand-emblem">
-                        <span>VM</span>
+                        <span>TVM</span>
                     </div>
                     <div class="vastra-brand-text">
-                        <span class="vastra-brand-name">Vastra Mahal</span>
+                        <span class="vastra-brand-name">The Vastra Mahal</span>
                         <span class="vastra-brand-tagline">Royal Heritage Couture</span>
                     </div>
                 </a>

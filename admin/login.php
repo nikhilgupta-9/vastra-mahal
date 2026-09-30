@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Login | Vastra Mahal Portal</title>
+    <title>Admin Login | The Vastra Mahal Portal</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/all.min.css" rel="stylesheet">
     <link href="../css/vastra-mahal-luxury.css" rel="stylesheet">
@@ -69,10 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container p-3">
         <div class="login-card mx-auto p-4 p-md-5">
             <div class="text-center mb-4">
-                <div class="vastra-brand-emblem mx-auto mb-3" style="width:54px;height:54px;font-size:22px;">
-                    <span>VM</span>
+                <div class="vastra-brand-emblem mx-auto mb-3" style="width:54px;height:54px;font-size:18px;">
+                    <span>TVM</span>
                 </div>
-                <h3 class="fw-bold mb-1" style="font-family: var(--vm-font-title); color: var(--vm-maroon);">Vastra Mahal</h3>
+                <h3 class="fw-bold mb-1" style="font-family: var(--vm-font-title); color: var(--vm-maroon);">The Vastra Mahal</h3>
                 <span class="badge bg-warning text-dark fw-bold text-uppercase px-3 py-1" style="letter-spacing:1px;">Store Management Portal</span>
             </div>
 

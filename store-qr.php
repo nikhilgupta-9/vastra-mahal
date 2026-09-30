@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Store QR & Digital Catalog | Vastra Mahal";
+$pageTitle = "Store QR & Digital Catalog | The Vastra Mahal";
 require_once __DIR__ . '/includes/header.php';
 
 // Fetch all active categories
@@ -19,7 +19,7 @@ try {
 <!-- Page Header -->
 <div class="luxury-page-header">
     <div class="container">
-        <h1>Vastra Mahal Digital QR Hub</h1>
+        <h1>The Vastra Mahal Digital QR Hub</h1>
         <div class="luxury-breadcrumb">
             <a href="index.php">Home</a>
             <span><i class="fa-solid fa-angle-right" style="font-size:11px;"></i></span>
@@ -35,21 +35,21 @@ try {
                 <!-- Main QR Card -->
                 <div class="card border rounded-4 shadow-lg p-4 p-md-5 bg-white text-center mb-5" style="border-color: var(--vm-border) !important;">
                     <div class="d-inline-flex align-items-center gap-2 mb-3">
-                        <div class="vastra-brand-emblem" style="width:42px;height:42px;font-size:18px;">
-                            <span>VM</span>
+                        <div class="vastra-brand-emblem" style="width:42px;height:42px;font-size:16px;">
+                            <span>TVM</span>
                         </div>
-                        <h3 class="mb-0 text-dark fw-bold" style="font-family: var(--vm-font-title);">Vastra Mahal</h3>
+                        <h3 class="mb-0 text-dark fw-bold" style="font-family: var(--vm-font-title);">The Vastra Mahal</h3>
                     </div>
                     <span class="badge bg-danger text-uppercase px-3 py-2 mb-3 align-self-center" style="letter-spacing:1.5px;">Boutique QR Pass & Catalog</span>
 
                     <h4 class="fw-bold mb-2" style="font-family: var(--vm-font-title); color: var(--vm-maroon);">Scan To Navigate & Explore Collections</h4>
                     <p class="text-muted small mx-auto mb-4" style="max-width: 500px;">
-                        Point your mobile camera to scan this QR code. It will open instant GPS directions directly to our boutique in Gandhi Market, Sagar Pur, New Delhi!
+                        Point your mobile camera to scan this QR code. It will open instant Google Maps directions directly to our boutique in Gandhi Market, Sagar Pur, New Delhi - The Vastra Mahal!
                     </p>
 
                     <!-- QR Code Display Box -->
                     <div class="p-3 border rounded-3 d-inline-block shadow-sm mb-4" style="background:#FFFDF9; border-color: var(--vm-gold) !important;">
-                        <img src="images/vastra-mahal-location-qr.png" alt="Vastra Mahal Boutique QR Code" class="img-fluid rounded" style="width: 260px; height: 260px;">
+                        <img src="images/vastra-mahal-location-qr.png" alt="The Vastra Mahal Boutique QR Code" class="img-fluid rounded" style="width: 260px; height: 260px;">
                         <div class="mt-2 small text-muted fw-semibold">
                             <i class="fa-solid fa-map-pin text-danger me-1"></i> Shop GPS Location Attached
                         </div>
