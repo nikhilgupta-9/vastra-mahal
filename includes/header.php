@@ -142,9 +142,6 @@ try {
                         <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $storeWhatsapp); ?>" target="_blank" class="btn btn-sm btn-whatsapp" title="Chat on WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i> Chat
                         </a>
-                        <a href="admin/login.php" class="btn btn-sm btn-light border text-muted" title="Store Admin Portal">
-                            <i class="fa-solid fa-user-shield"></i>
-                        </a>
                     </div>
                 </div>
             </div>

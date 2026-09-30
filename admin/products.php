@@ -12,6 +12,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])
         $delStmt = $pdo->prepare("DELETE FROM products WHERE id = ?");
         $delStmt->execute([$delId]);
         $success = "Product #{$delId} has been successfully deleted.";
+        autoSyncDatabaseSql($pdo);
     } catch (Exception $e) {
         $error = "Error deleting product: " . $e->getMessage();
     }
@@ -23,6 +24,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'toggle_stock' && isset($_GET[
     try {
         $pdo->prepare("UPDATE products SET in_stock = 1 - in_stock WHERE id = ?")->execute([$togId]);
         $success = "Stock status updated.";
+        autoSyncDatabaseSql($pdo);
     } catch (Exception $e) {
         $error = "Could not update stock status.";
     }

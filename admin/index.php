@@ -19,6 +19,22 @@ $recentProducts = $pdo->query("SELECT p.*, c.name as category_name
 $recentInquiries = $pdo->query("SELECT * FROM contact_inquiries ORDER BY id DESC LIMIT 5")->fetchAll();
 ?>
 
+<!-- Dashboard Top Actions -->
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-4 pb-2 border-bottom">
+    <div>
+        <h4 class="fw-bold mb-1" style="font-family: var(--vm-font-title);">Boutique Command Dashboard</h4>
+        <small class="text-muted">Real-time overview of ethnic collections, inquiries, and boutique operations.</small>
+    </div>
+    <div class="d-flex gap-2 mt-2 mt-sm-0">
+        <a href="product-add.php" class="btn btn-sm btn-royal shadow-sm">
+            <i class="fa-solid fa-circle-plus me-1"></i> Add Product
+        </a>
+        <a href="backup.php" class="btn btn-sm btn-outline-dark shadow-sm">
+            <i class="fa-solid fa-cloud-arrow-down me-1"></i> Backup & Git Safety
+        </a>
+    </div>
+</div>
+
 <!-- Metric Cards Row -->
 <div class="row g-4 mb-4">
     <!-- Card 1: Total Products -->

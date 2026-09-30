@@ -78,9 +78,21 @@ Place the project folder in your web server root (e.g., `D:/xampp/htdocs/vastra-
 
 ## 🔐 Default Admin Credentials
 
-- **URL:** `http://localhost/vastra-mahal/admin/login.php`
+- **URL:** `http://localhost/vastra-mahal/admin/login.php` *(Direct URL access; hidden from public storefront navigation for security)*
 - **Username:** `admin`
 - **Password:** `admin123`
+
+---
+
+## 🛡️ Git Deployment & Product Persistence Safety Guide
+
+> **Q: When we add products from Admin, will they be deleted when code is updated from Git?**  
+> **A: NO! Your products are 100% safe.** Here is how it works:
+
+1. **How `git pull` works:** Git only updates project code files (`.php`, `.css`, `.js`). Git **never** touches or alters your live MySQL database tables.
+2. **Automatic SQL Auto-Sync:** Whenever you add, edit, or delete a product in the Admin panel, the system automatically mirrors the updated database state into `database/vastra_mahal_db.sql`. When you commit to Git, your products are included in the repository.
+3. **⚠️ Golden Rule:** Never re-import an old `.sql` file onto your live production database after adding new products.
+4. **Backup Center (`admin/backup.php`):** The Admin panel includes a 1-click backup center where you can download an instant `.sql` dump or a `.zip` archive of all uploaded product images at any time.
 
 ---
 
@@ -88,15 +100,16 @@ Place the project folder in your web server root (e.g., `D:/xampp/htdocs/vastra-
 
 ```text
 vastra-mahal/
-├── admin/                     # Admin control panel
+├── admin/                     # Admin control panel (Hidden from public)
 │   ├── includes/              # Admin header, navigation, footer
 │   ├── index.php              # Dashboard
-│   ├── products.php           # Product list
-│   ├── product-add.php        # Create product
-│   ├── product-edit.php       # Update product
+│   ├── products.php           # Product list & toggle
+│   ├── product-add.php        # Create product (with auto-sync)
+│   ├── product-edit.php       # Update product (with auto-sync)
 │   ├── categories.php         # Manage categories
 │   ├── inquiries.php          # Manage contact form inquiries
 │   ├── store-qr.php           # Printable boutique QR counter standee
+│   ├── backup.php             # Database backup, images ZIP & Git safety center
 │   └── login.php / logout.php # Admin authentication
 ├── config/
 │   └── db.php                 # MySQL PDO connection & constants
@@ -134,4 +147,4 @@ vastra-mahal/
 
 ---
 
-Developed with ❤️ for **The Vastra Mahal**.
+Developed with ❤️ by [Nikhil Works](https://nikhilworks.com) for **The Vastra Mahal**.

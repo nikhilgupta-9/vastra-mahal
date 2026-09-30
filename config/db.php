@@ -47,9 +47,9 @@ $localConfig = [
 $prodConfig = [
     'DB_HOST' => 'localhost',
     'DB_PORT' => '3306',
-    'DB_USER' => 'vastra_user',
-    'DB_PASS' => 'ChangeThisPasswordOnServer!',
-    'DB_NAME' => 'vastra_mahal_prod',
+    'DB_USER' => 'u950539402_vastramahal_db',
+    'DB_PASS' => 'P>|X@Oq7e!',
+    'DB_NAME' => 'u950539402_vastramahal_db',
 ];
 
 // Active configuration initially picked by environment detection
@@ -251,3 +251,88 @@ function checkAdminAuth() {
         exit;
     }
 }
+
+/**
+ * Generate a complete SQL Dump of all database tables using PDO
+ */
+function generateDatabaseSqlDump($pdo) {
+    $tables = ['admin_users', 'categories', 'products', 'contact_inquiries', 'site_settings'];
+    $out = "-- ========================================================\n";
+    $out .= "-- The Vastra Mahal (द वस्त्र महल) - Database Backup\n";
+    $out .= "-- Generated: " . date('Y-m-d H:i:s') . "\n";
+    $out .= "-- Compatible with MySQL 5.7+ / 8.0+ / MariaDB 10.x+\n";
+    $out .= "-- Safe for Git deployment and live database synchronization\n";
+    $out .= "-- ========================================================\n\n";
+    $out .= "SET FOREIGN_KEY_CHECKS=0;\n";
+    $out .= "SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";\n";
+    $out .= "SET time_zone = \"+00:00\";\n\n";
+
+    foreach ($tables as $table) {
+        try {
+            $stmt = $pdo->query("SHOW CREATE TABLE `{$table}`");
+            $row = $stmt->fetch(PDO::FETCH_NUM);
+            if (!$row) continue;
+
+            $createSql = $row[1];
+            if (stripos($createSql, 'CREATE TABLE IF NOT EXISTS') === false) {
+                $createSql = preg_replace('/^CREATE TABLE/i', 'CREATE TABLE IF NOT EXISTS', $createSql);
+            }
+
+            $out .= "-- --------------------------------------------------------\n";
+            $out .= "-- Table structure for `{$table}`\n";
+            $out .= "-- --------------------------------------------------------\n";
+            $out .= $createSql . ";\n\n";
+
+            $dataStmt = $pdo->query("SELECT * FROM `{$table}`");
+            $rows = $dataStmt->fetchAll(PDO::FETCH_ASSOC);
+            if (!empty($rows)) {
+                $out .= "-- Data for `{$table}` (" . count($rows) . " rows)\n";
+                $columns = array_keys($rows[0]);
+                $colList = implode('`, `', $columns);
+
+                foreach ($rows as $r) {
+                    $vals = [];
+                    foreach ($r as $val) {
+                        if ($val === null) {
+                            $vals[] = 'NULL';
+                        } else {
+                            $vals[] = $pdo->quote($val);
+                        }
+                    }
+                    $valList = implode(', ', $vals);
+
+                    if ($table === 'site_settings') {
+                        $out .= "INSERT INTO `{$table}` (`{$colList}`) VALUES ({$valList}) ON DUPLICATE KEY UPDATE `setting_value`=VALUES(`setting_value`);\n";
+                    } elseif (in_array('id', $columns)) {
+                        $out .= "INSERT INTO `{$table}` (`{$colList}`) VALUES ({$valList}) ON DUPLICATE KEY UPDATE `id`=`id`;\n";
+                    } else {
+                        $out .= "INSERT IGNORE INTO `{$table}` (`{$colList}`) VALUES ({$valList});\n";
+                    }
+                }
+                $out .= "\n";
+            }
+        } catch (Exception $e) {
+            error_log("Failed dumping table {$table}: " . $e->getMessage());
+        }
+    }
+
+    $out .= "SET FOREIGN_KEY_CHECKS=1;\n";
+    return $out;
+}
+
+/**
+ * Auto-sync database dump to database/vastra_mahal_db.sql
+ * Keeps Git repo always updated with latest products
+ */
+function autoSyncDatabaseSql($pdo) {
+    try {
+        $dump = generateDatabaseSqlDump($pdo);
+        $file = __DIR__ . '/../database/vastra_mahal_db.sql';
+        file_put_contents($file, $dump);
+        return true;
+    } catch (Exception $e) {
+        error_log("Database auto-sync failed: " . $e->getMessage());
+        return false;
+    }
+}
+

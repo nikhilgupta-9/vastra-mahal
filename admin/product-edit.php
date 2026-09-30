@@ -72,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $product = $stmt->fetch();
 
                 $success = "Product details updated successfully!";
+                autoSyncDatabaseSql($pdo);
             } catch (Exception $e) {
                 $error = 'Database error: ' . $e->getMessage();
             }

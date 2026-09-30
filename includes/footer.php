@@ -114,10 +114,9 @@ $cleanWhatsapp = preg_replace('/[^0-9]/', '', $storeWhatsapp);
                         </span>
                     </div>
                     <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-                        <span class="small text-secondary me-3">Handcrafted with Heritage</span>
-                        <a href="admin/login.php" class="small text-muted text-decoration-none">
-                            <i class="fa-solid fa-lock me-1"></i> Admin Login
-                        </a>
+                        <span class="small text-secondary">
+                            Developed by <a href="https://nikhilworks.com" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none fw-semibold">Nikhil Works</a>
+                        </span>
                     </div>
                 </div>
             </div>

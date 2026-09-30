@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]);
 
                 $newId = $pdo->lastInsertId();
+                autoSyncDatabaseSql($pdo);
                 header("Location: products.php?success=Product+'" . urlencode($name) . "'+added+successfully");
                 exit;
             } catch (Exception $e) {

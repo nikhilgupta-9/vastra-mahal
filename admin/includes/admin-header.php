@@ -161,6 +161,11 @@ try {
                 <i class="fa-solid fa-qrcode"></i> Store QR Standee
             </a>
 
+            <span class="text-uppercase text-secondary px-3 py-1 mt-3 fw-bold" style="font-size:11px; letter-spacing:1px;">System & Safety</span>
+            <a href="backup.php" class="admin-nav-item <?= $activeAdminPage === 'backup.php' ? 'active' : ''; ?>">
+                <i class="fa-solid fa-cloud-arrow-down"></i> Backup & Git Safety
+            </a>
+
             <span class="text-uppercase text-secondary px-3 py-1 mt-3 fw-bold" style="font-size:11px; letter-spacing:1px;">External</span>
             <a href="../index.php" target="_blank" class="admin-nav-item">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Site
