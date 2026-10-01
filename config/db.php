@@ -48,7 +48,7 @@ $prodConfig = [
     'DB_HOST' => 'localhost',
     'DB_PORT' => '3306',
     'DB_USER' => 'u950539402_vastramahal_db',
-    'DB_PASS' => 'P>|X@Oq7e!',
+    'DB_PASS' => 'L5@QUkU!|6y',
     'DB_NAME' => 'u950539402_vastramahal_db',
 ];
 
