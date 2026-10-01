@@ -171,7 +171,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
                     <div>
                         <h5 class="mb-0 fw-bold" style="font-family: var(--vm-font-title);"><i class="fa-solid fa-map-location-dot text-danger me-2"></i> The Vastra Mahal Location Map</h5>
-                        <small class="text-muted">Gandhi Market, Sagar Pur, New Delhi</small>
+                        <small class="text-muted"><?= e($storeAddress); ?></small>
                     </div>
                     <a href="<?= e($googleMapUrl); ?>" target="_blank" class="btn btn-sm btn-royal-outline">
                         <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Open Full Map

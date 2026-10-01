@@ -140,7 +140,7 @@ vastra-mahal/
 ---
 
 ## 📍 Boutique Location & Contact
-- **Address:** Gandhi Market, Sagar Pur, New Delhi
+- **Address:** RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046
 - **Phone / WhatsApp:** +91 96251 37860
 - **Email:** thevastramahal60@gmail.com
 - **Google Profile / Store Location:** [https://share.google/4X3xcWrgXxZ754XWa](https://share.google/4X3xcWrgXxZ754XWa)

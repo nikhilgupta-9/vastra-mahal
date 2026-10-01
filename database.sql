@@ -82,7 +82,7 @@ INSERT INTO `site_settings` (`setting_key`, `setting_value`) VALUES
 ('phone_number', '+91 96251 37860'),
 ('whatsapp_number', '+919625137860'),
 ('store_email', 'thevastramahal60@gmail.com'),
-('store_address', 'Gandhi Market, Sagar Pur, New Delhi'),
+('store_address', 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046'),
 ('google_map_url', 'https://share.google/4X3xcWrgXxZ754XWa'),
 ('google_map_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.825856456073!2d77.0983074!3d28.6053069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzE5LjEiTiA3N8KwMDYnMDMuMiJF!5e0!3m2!1sen!2sin!4v1700000000000'),
 ('store_timings', 'Mon - Sun: 10:30 AM to 9:00 PM'),
