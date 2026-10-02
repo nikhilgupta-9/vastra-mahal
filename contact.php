@@ -178,7 +178,7 @@ require_once __DIR__ . '/includes/header.php';
                     </a>
                 </div>
                 <div class="ratio ratio-21x9" style="min-height: 380px;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.825856456073!2d77.0983074!3d28.6053069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzE5LjEiTiA3N8KwMDYnMDMuMiJF!5e0!3m2!1sen!2sin!4v1700000000000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=Gandhi+Market,+West+Sagar+Pur,+New+Delhi+110046&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

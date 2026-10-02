@@ -168,7 +168,51 @@ if (!$pdo) {
 }
 
 // --------------------------------------------------------------------------
-// 5. Global Helper Functions
+// 5. Auto-Sync Official Business Information (Permanent Live Database Sync)
+// --------------------------------------------------------------------------
+try {
+    $officialUpdates = [
+        'store_name'      => 'The Vastra Mahal',
+        'store_tagline'   => 'Royal Heritage Ethnic Couture & Handloom Silks',
+        'phone_number'    => '+91 96251 37860',
+        'whatsapp_number' => '+919625137860',
+        'store_email'     => 'thevastramahal60@gmail.com',
+        'store_address'   => 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046',
+        'google_map_url'  => 'https://share.google/4X3xcWrgXxZ754XWa',
+        'store_timings'   => 'Mon - Sun: 10:30 AM to 9:00 PM',
+        'instagram_url'   => 'https://instagram.com/thevastramahal',
+        'facebook_url'    => 'https://facebook.com/thevastramahal',
+    ];
+
+    $checkStmt = $pdo->query("SELECT setting_key, setting_value FROM site_settings WHERE setting_key IN ('store_address', 'phone_number', 'store_email', 'google_map_url')");
+    $dbSettings = $checkStmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+    $needsSync = false;
+    if (isset($dbSettings['store_address']) && (stripos($dbSettings['store_address'], 'Janakpuri') !== false || stripos($dbSettings['store_address'], 'Uttam Nagar') !== false || stripos($dbSettings['store_address'], 'Heritage Fashion') !== false)) {
+        $needsSync = true;
+    }
+    if (isset($dbSettings['phone_number']) && stripos($dbSettings['phone_number'], '98765') !== false) {
+        $needsSync = true;
+    }
+    if (isset($dbSettings['store_email']) && stripos($dbSettings['store_email'], 'contact@vastramahal.com') !== false) {
+        $needsSync = true;
+    }
+    if (isset($dbSettings['google_map_url']) && stripos($dbSettings['google_map_url'], '73nDqtqFGqEFEmUf6') !== false) {
+        $needsSync = true;
+    }
+
+    if ($needsSync) {
+        $upStmt = $pdo->prepare("INSERT INTO site_settings (setting_key, setting_value) VALUES (?, ?) ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value)");
+        foreach ($officialUpdates as $k => $v) {
+            $upStmt->execute([$k, $v]);
+        }
+    }
+} catch (Exception $e) {
+    // Fail-safe during initial install
+}
+
+// --------------------------------------------------------------------------
+// 6. Global Helper Functions
 // --------------------------------------------------------------------------
 
 /**
@@ -180,7 +224,22 @@ function getSetting($pdo, $key, $default = '') {
         try {
             $stmt = $pdo->query("SELECT setting_key, setting_value FROM site_settings");
             while ($row = $stmt->fetch()) {
-                $settingsCache[$row['setting_key']] = $row['setting_value'];
+                $val = $row['setting_value'];
+
+                // Live safety filter: Ensure legacy dummy values are never rendered
+                if ($row['setting_key'] === 'store_address' && (stripos($val, 'Janakpuri') !== false || stripos($val, 'Uttam Nagar') !== false || stripos($val, 'Heritage Fashion') !== false)) {
+                    $val = 'RZ K1A/272, Gandhi Market, West Sagar Pur, New Delhi - 110046';
+                } elseif ($row['setting_key'] === 'phone_number' && stripos($val, '98765') !== false) {
+                    $val = '+91 96251 37860';
+                } elseif ($row['setting_key'] === 'whatsapp_number' && stripos($val, '98765') !== false) {
+                    $val = '+919625137860';
+                } elseif ($row['setting_key'] === 'store_email' && stripos($val, 'contact@vastramahal.com') !== false) {
+                    $val = 'thevastramahal60@gmail.com';
+                } elseif ($row['setting_key'] === 'google_map_url' && stripos($val, '73nDqtqFGqEFEmUf6') !== false) {
+                    $val = 'https://share.google/4X3xcWrgXxZ754XWa';
+                }
+
+                $settingsCache[$row['setting_key']] = $val;
             }
         } catch (Exception $e) {
             return $default;
