@@ -1,9 +1,9 @@
 <?php
 /**
- * The Vastra Mahal (द वस्त्र महल) - Smart Multi-Environment Database Configuration
+ * The Vastra Mahal (द वस्त्र महल) - Simple & Reliable Database Configuration
  * 
- * Automatically switches between Local (XAMPP/WAMP) & Production (cPanel/VPS/Cloud)
- * Push freely to Git without risking or overwriting live production credentials!
+ * Automatically switches between Localhost (XAMPP) & Live Server (cPanel/Hostinger)
+ * Push freely to Git without breaking local or live credentials!
  */
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -11,102 +11,54 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // --------------------------------------------------------------------------
-// 1. Detect Environment (Localhost vs Production)
+// 1. Detect Environment (Localhost vs Live Server)
 // --------------------------------------------------------------------------
 $rawHost = $_SERVER['HTTP_HOST'] ?? ($_SERVER['SERVER_NAME'] ?? '');
-// Strip port if present for comparison
 $hostName = strtolower(trim(explode(':', $rawHost)[0]));
 
-$isLocal = false;
-if (php_sapi_name() === 'cli') {
-    // Terminal CLI environment
-    $isLocal = (getenv('APP_ENV') !== 'production');
+$isLocal = (php_sapi_name() === 'cli' && getenv('APP_ENV') !== 'production')
+           || in_array($hostName, ['localhost', '127.0.0.1', '::1'], true)
+           || (strlen($hostName) > 6 && substr($hostName, -6) === '.local')
+           || (strlen($hostName) > 5 && substr($hostName, -5) === '.test');
+
+// --------------------------------------------------------------------------
+// 2. Database Credentials
+// --------------------------------------------------------------------------
+if ($isLocal) {
+    // LOCALHOST (XAMPP / WAMP)
+    $db_host = 'localhost';
+    $db_name = 'vastra_mahal_db';
+    $db_user = 'root';
+    $db_pass = '';
 } else {
-    // Web request environment
-    $localHosts = ['localhost', '127.0.0.1', '::1'];
-    $isLocal = in_array($hostName, $localHosts, true)
-               || substr($hostName, -6) === '.local'
-               || substr($hostName, -5) === '.test';
+    // LIVE PRODUCTION SERVER (Hostinger / cPanel)
+    $db_host = 'localhost';
+    $db_name = 'u950539402_vastramahal_db';
+    $db_user = 'u950539402_vastramahal_db';
+    $db_pass = 'L5@QUkU!|6y'; // Primary live password
 }
 
-// --------------------------------------------------------------------------
-// 2. Default Credentials Profiles
-// --------------------------------------------------------------------------
-
-// Local Environment (XAMPP / WAMP defaults)
-$localConfig = [
-    'DB_HOST' => 'localhost',
-    'DB_PORT' => '3306',
-    'DB_USER' => 'root',
-    'DB_PASS' => '',
-    'DB_NAME' => 'vastra_mahal_db',
-];
-
-// Production Defaults
-// You can edit these directly OR use 'config/db.custom.php' / '.env' on the live server!
-$prodConfig = [
-    'DB_HOST' => 'localhost',
-    'DB_PORT' => '3306',
-    'DB_USER' => 'u950539402_vastramahal_db',
-    'DB_PASS' => 'L5@QUkU!|6y',
-    'DB_NAME' => 'u950539402_vastramahal_db',
-];
-
-// Active configuration initially picked by environment detection
-$activeConfig = $isLocal ? $localConfig : $prodConfig;
-
-// --------------------------------------------------------------------------
-// 3. Safe Overrides (Files in .gitignore - NEVER overwritten by Git pulls!)
-// --------------------------------------------------------------------------
-
-// Priority 1: config/db.custom.php (Recommended for cPanel / Shared Hosting)
+// Check for custom server override (config/db.custom.php is in .gitignore)
 $customConfigFile = __DIR__ . '/db.custom.php';
 if (file_exists($customConfigFile)) {
-    $customConfig = include $customConfigFile;
-    if (is_array($customConfig)) {
-        $activeConfig = array_merge($activeConfig, $customConfig);
-    }
-}
-
-// Priority 2: Root .env file (Standard modern environment configuration)
-$envFile = __DIR__ . '/../.env';
-if (file_exists($envFile)) {
-    $envLines = @file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    if ($envLines !== false) {
-        foreach ($envLines as $line) {
-            $line = trim($line);
-            if (empty($line) || $line[0] === '#') continue;
-            if (strpos($line, '=') !== false) {
-                list($envKey, $envVal) = explode('=', $line, 2);
-                $envKey = trim($envKey);
-                $envVal = trim($envVal, " \t\n\r\0\x0B\"'");
-                if (in_array($envKey, ['DB_HOST', 'DB_PORT', 'DB_USER', 'DB_PASS', 'DB_NAME'])) {
-                    $activeConfig[$envKey] = $envVal;
-                }
-            }
-        }
-    }
-}
-
-// Priority 3: Server Environment Variables (Cloud / Docker / Apache SetEnv)
-foreach (['DB_HOST', 'DB_PORT', 'DB_USER', 'DB_PASS', 'DB_NAME'] as $sysKey) {
-    $sysVal = getenv($sysKey) ?: ($_ENV[$sysKey] ?? null);
-    if ($sysVal !== false && $sysVal !== null && $sysVal !== '') {
-        $activeConfig[$sysKey] = $sysVal;
+    $custom = @include $customConfigFile;
+    if (is_array($custom)) {
+        if (!empty($custom['DB_HOST'])) $db_host = $custom['DB_HOST'];
+        if (!empty($custom['DB_NAME'])) $db_name = $custom['DB_NAME'];
+        if (!empty($custom['DB_USER'])) $db_user = $custom['DB_USER'];
+        if (isset($custom['DB_PASS']))  $db_pass = $custom['DB_PASS'];
     }
 }
 
 // --------------------------------------------------------------------------
-// 4. Define Global Constants
+// 3. Global Constants & Site URLs
 // --------------------------------------------------------------------------
-define('DB_HOST', $activeConfig['DB_HOST'] ?? 'localhost');
-define('DB_PORT', $activeConfig['DB_PORT'] ?? '3306');
-define('DB_USER', $activeConfig['DB_USER'] ?? 'root');
-define('DB_PASS', $activeConfig['DB_PASS'] ?? '');
-define('DB_NAME', $activeConfig['DB_NAME'] ?? 'vastra_mahal_db');
+define('DB_HOST', $db_host);
+define('DB_NAME', $db_name);
+define('DB_USER', $db_user);
+define('DB_PASS', $db_pass);
 define('IS_LOCAL', $isLocal);
 
-// Dynamic Site URL calculation
 $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
            || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
            || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
@@ -119,43 +71,104 @@ define('SITE_URL', $protocol . $currentHost . $siteBase);
 define('ADMIN_URL', SITE_URL . '/admin');
 
 // --------------------------------------------------------------------------
-// 5. Connect to Database via PDO
+// 4. Database Connection (PDO with Smart Auto-Fallback)
 // --------------------------------------------------------------------------
-try {
-    $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4";
-    $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ];
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
-} catch (PDOException $e) {
-    if (IS_LOCAL) {
-        die("<div style='font-family:Segoe UI,sans-serif;padding:30px;max-width:680px;margin:50px auto;border:2px solid #7B1113;border-radius:12px;background:#FFF;box-shadow:0 10px 30px rgba(0,0,0,0.1);'>
-                <h2 style='color:#7B1113;margin-top:0;'>⚠️ Local Database Connection Error</h2>
-                <p>Could not connect to database '<strong>" . htmlspecialchars(DB_NAME) . "</strong>' using user '<strong>" . htmlspecialchars(DB_USER) . "</strong>' on <strong>" . htmlspecialchars(DB_HOST) . ":" . htmlspecialchars(DB_PORT) . "</strong>.</p>
-                <div style='background:#FFF5F5;border-left:4px solid #7B1113;padding:12px 15px;margin:20px 0;font-size:13px;color:#333;'>
-                    <strong>Error Message:</strong> " . htmlspecialchars($e->getMessage()) . "
-                </div>
-                <p style='color:#555;font-size:14px;'>Make sure MySQL is started in XAMPP and the database <code>" . htmlspecialchars(DB_NAME) . "</code> is imported.</p>
-             </div>");
-    } else {
-        die("<div style='font-family:Georgia,serif;padding:50px 30px;text-align:center;max-width:550px;margin:80px auto;border:2px solid #C89D4B;border-radius:12px;background:#FFF;box-shadow:0 12px 35px rgba(0,0,0,0.1);'>
-                <h2 style='color:#7B1113;margin:0 0 10px;font-size:28px;'>THE VASTRA MAHAL</h2>
-                <p style='color:#C89D4B;letter-spacing:2px;font-size:12px;text-transform:uppercase;margin-bottom:25px;'>Royal Heritage Ethnic Couture</p>
-                <h4 style='color:#2B2B2B;margin-bottom:15px;font-family:sans-serif;'>Boutique Portal Temporarily Unavailable</h4>
-                <p style='color:#666;line-height:1.6;font-family:sans-serif;font-size:14px;'>We are currently undergoing scheduled system updates. Please check back in a few moments or connect directly with our boutique on WhatsApp.</p>
-                <div style='margin-top:25px;'>
-                    <a href='https://wa.me/919625137860' style='background:#25D366;color:#FFF;text-decoration:none;padding:10px 22px;border-radius:25px;font-family:sans-serif;font-size:14px;font-weight:600;display:inline-block;'>
-                        Contact via WhatsApp
-                    </a>
-                </div>
-             </div>");
+$pdo = null;
+$errorList = [];
+
+// Prepare connection candidates
+$attempts = [
+    ['host' => $db_host, 'pass' => $db_pass],
+];
+
+if (!$isLocal) {
+    // If primary password fails on live, also attempt alternate password
+    $attempts[] = ['host' => $db_host, 'pass' => 'P>|X@Oq7e!'];
+    // In case socket vs TCP issue on live, try 127.0.0.1
+    $attempts[] = ['host' => '127.0.0.1', 'pass' => $db_pass];
+    $attempts[] = ['host' => '127.0.0.1', 'pass' => 'P>|X@Oq7e!'];
+}
+
+$pdoOptions = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
+foreach ($attempts as $attempt) {
+    try {
+        $dsn = "mysql:host=" . $attempt['host'] . ";dbname=" . $db_name . ";charset=utf8mb4";
+        $pdo = new PDO($dsn, $db_user, $attempt['pass'], $pdoOptions);
+        break; // Successfully connected!
+    } catch (PDOException $e) {
+        $errorList[] = $e->getMessage();
     }
 }
 
+// If connection failed, show clean and transparent error details so you can fix it immediately!
+if (!$pdo) {
+    $lastError = end($errorList);
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Database Connection Error - The Vastra Mahal</title>
+        <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #1e293b; padding: 25px; margin: 0; }
+            .card { max-width: 650px; margin: 40px auto; background: #ffffff; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #dc2626; padding: 30px; }
+            h2 { color: #dc2626; margin-top: 0; font-size: 22px; display: flex; align-items: center; gap: 8px; }
+            p { color: #475569; font-size: 14px; line-height: 1.6; }
+            .details-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+            .details-table td { padding: 9px 12px; border-bottom: 1px solid #f1f5f9; }
+            .details-table td:first-child { font-weight: 600; color: #64748b; width: 140px; }
+            .error-box { background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 14px; font-family: Consolas, monospace; font-size: 13px; color: #991b1b; word-break: break-all; margin: 18px 0; }
+            .guide-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 14px; color: #166534; }
+            .guide-box h4 { margin: 0 0 10px; font-size: 15px; }
+            .guide-box ol { margin: 0; padding-left: 20px; line-height: 1.7; }
+            .btn { display: inline-block; background: #0f172a; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; margin-top: 10px; }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>⚠️ Database Connection Error</h2>
+            <p>Database se connect nahi ho paya. Yeh details check karein:</p>
+            
+            <table class="details-table">
+                <tr><td>Environment:</td><td><strong><?= $isLocal ? 'Localhost (XAMPP)' : 'Live Server' ?></strong></td></tr>
+                <tr><td>Host:</td><td><code><?= htmlspecialchars($db_host) ?></code></td></tr>
+                <tr><td>Database Name:</td><td><code><?= htmlspecialchars($db_name) ?></code></td></tr>
+                <tr><td>Username:</td><td><code><?= htmlspecialchars($db_user) ?></code></td></tr>
+            </table>
+
+            <div class="error-box">
+                <strong>MySQL Error Message:</strong><br>
+                <?= htmlspecialchars($lastError) ?>
+            </div>
+
+            <div class="guide-box">
+                <h4>🛠️ Hostinger / cPanel me kaise thik karein:</h4>
+                <ol>
+                    <li>Hostinger / cPanel open karein &rarr; <strong>MySQL Databases</strong> me jayein.</li>
+                    <li>Check karein ki database <code><?= htmlspecialchars($db_name) ?></code> create hai ya nahi.</li>
+                    <li>Check karein ki user <code><?= htmlspecialchars($db_user) ?></code> ko database me <strong>ALL PRIVILEGES</strong> ke sath Add kiya gaya hai.</li>
+                    <li>Agar password change kiya hai, toh <code>config/db.php</code> me update karein ya <code>config/db.custom.php</code> file banayein.</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="?" class="btn">🔄 Refresh Page</a>
+            </div>
+        </div>
+    </body>
+    </html>
+    <?php
+    exit;
+}
+
 // --------------------------------------------------------------------------
-// 6. Global Helper Functions
+// 5. Global Helper Functions
 // --------------------------------------------------------------------------
 
 /**
@@ -335,4 +348,3 @@ function autoSyncDatabaseSql($pdo) {
         return false;
     }
 }
-
